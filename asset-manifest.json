@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TDList/static/css/main.fa6608fd.css",
+    "main.js": "/TDList/static/js/main.f04eeac3.js",
+    "index.html": "/TDList/index.html",
+    "main.fa6608fd.css.map": "/TDList/static/css/main.fa6608fd.css.map",
+    "main.f04eeac3.js.map": "/TDList/static/js/main.f04eeac3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa6608fd.css",
+    "static/js/main.f04eeac3.js"
+  ]
+}
