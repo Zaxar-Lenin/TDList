@@ -1,24 +1,33 @@
-import { Button, List } from 'antd';
-import React from 'react';
+import { Button, List, Modal } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { useTypedSelector } from 'store/hooks/useTypedSeoctor';
 import { getTasks } from 'store/slice/taskSlice/selectors';
 import Task from 'components/task';
 import { TaskType } from 'store/slice/taskSlice/types';
 import { AppstoreAddOutlined } from '@ant-design/icons';
-import { PaginationConfig } from 'antd/es/pagination';
-import { useTypedDispatch } from 'store/hooks/useTypedDispatch';
+import DisplayModal from 'components/displayModal';
 
 const ListWrapper = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
   const tasks = useTypedSelector(getTasks);
 
-  const dispatch = useTypedDispatch();
+  useEffect(() => {
+    const quantityPage = tasks.length;
+    setCurrentPage(Math.ceil(quantityPage / 3));
+  }, [tasks]);
 
-  // const handleOnClickAddTask = (value: string) => {
-  //   dispatch(addTask(value))
-  // }
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
 
-  const openModal = () => {
-    return;
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -26,8 +35,10 @@ const ListWrapper = () => {
       <List
         pagination={{
           onChange: (page) => {
-            console.log(page);
+            setCurrentPage(page);
           },
+          hideOnSinglePage: true,
+          current: currentPage,
           pageSize: 3,
         }}
         className={'todoDisplay'}
@@ -36,7 +47,16 @@ const ListWrapper = () => {
         renderItem={(item: TaskType) => (
           <Task key={item.id} {...item} />)
         } />
-      <Button onClick={openModal} className={'buttonAdd'} block icon={<AppstoreAddOutlined />}>Add task</Button>
+      <Button onClick={showModal} className={'buttonAdd'} block icon={<AppstoreAddOutlined />}>Add task</Button>
+      <Modal
+        className={'modal'}
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <DisplayModal onClose={handleCancel} typeDisplay={'add'} />
+      </Modal>
     </div>
   );
 };

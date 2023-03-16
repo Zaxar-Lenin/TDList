@@ -4,8 +4,9 @@ import ListWrapper from 'components/list';
 
 
 const App = () => {
+
   return (
-    <div className = {"app"}>
+    <div className={'app'}>
       <ListWrapper />
     </div>
   );

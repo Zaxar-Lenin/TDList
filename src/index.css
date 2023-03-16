@@ -1,51 +1,80 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.app{
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.todo{
-  max-height: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+.todo {
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.todoDisplay{
-  width: 500px;
+.todoDisplay {
+    width: 500px;
 }
 
-.buttonAdd{
-  margin: 20px 0 0 0;
+.buttonAdd {
+    margin: 20px 0 0 0;
 }
 
-.task{
-  min-height: 60px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.task {
+    min-height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.title{
-  max-width: 300px;
+.title {
+    max-width: 300px;
 }
 
-.buttonDelete{
-  color: red;
+.buttonCouple {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonDelete {
+    color: red;
+}
+
+.modal .ant-modal-content {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.modal .ant-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.displayModal {
+    max-width: 300px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
 }

@@ -1,8 +1,8 @@
-import {RootState} from "store/index";
+import { RootState } from 'store/index';
 
-const getTasks = (state: RootState) => state.task.tasks
+const getTasks = (state: RootState) => state.task.tasks;
 
 
 export {
-    getTasks
-}
+  getTasks,
+};
